@@ -1,0 +1,54 @@
+{
+  "cart": [
+    {
+      "id": 100001,
+      "name": "低帮城市休闲户外天然牛皮鞋",
+      "price": 128,
+      "count": 1,
+      "thumbnail": "https://pic.rmb.bdstatic.com/bjh/240115/5eb574c8235cdc8ecc9c8bd82f4ba42639.jpeg@h_1280"
+    },
+    {
+      "id": 100002,
+      "name": "网易味央黑猪肉330g",
+      "price": 39,
+      "count": 10,
+      "thumbnail": "https://pic.rmb.bdstatic.com/bjh/240115/5eb574c8235cdc8ecc9c8bd82f4ba42639.jpeg@h_1280"
+    },
+    {
+      "id": 100003,
+      "name": "Kenrol男女简洁多釆）小米电视4A 32英寸",
+      "price": 899,
+      "count": 1,
+      "thumbnail": "https://pic.rmb.bdstatic.com/bjh/240115/5eb574c8235cdc8ecc9c8bd82f4ba42639.jpeg@h_1280"
+    },
+    {
+      "id": 100004,
+      "name": "小米（MI）小米电视4A 43英寸",
+      "price": 1399,
+      "count": 1,
+      "thumbnail": "https://pic.rmb.bdstatic.com/bjh/240115/5eb574c8235cdc8ecc9c8bd82f4ba42639.jpeg@h_1280"
+    }
+  ],
+  "friends": [
+    {
+      "id": 100001,
+      "name": "小明",
+      "age": 18
+    },
+    {
+      "id": 100002,
+      "name": "小红",
+      "age": 20
+    },
+    {
+      "id": 100003,
+      "name": "小刚",
+      "age": 22
+    },
+    {
+      "id": 100004,
+      "name": "小丽",
+      "age": 19
+    }
+  ]
+}
