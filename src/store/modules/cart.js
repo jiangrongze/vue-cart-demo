@@ -1,17 +1,21 @@
 import axios from 'axios'
 
 export default {
+
   namespaced: true,
+
   state () {
     return {
       list: []
     }
   },
+
   mutations: {
     updateList (state, newList) {
       state.list = newList
     }
   },
+
   actions: {
     async getList (context) {
       // return new Promise((resolve, reject) => {

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import cart from './modules/cart'
+import user from './modules/user'
 import axiox from 'axios'
 
 Vue.use(Vuex)
@@ -20,6 +21,7 @@ const store = new Vuex.Store({
       state.list = data
     }
   },
+
   actions: {
     async getList (ctx) {
       const data = await axiox.get('https://localhost:3000/cart')
@@ -28,8 +30,10 @@ const store = new Vuex.Store({
       this.list = data
     }
   },
+
   modules: {
-    cart
+    cart,
+    user
   }
 })
 
