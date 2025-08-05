@@ -1,5 +1,5 @@
 <template>
-  <div class="good-container">
+  <div class="good-container"><h1>Shopping Cart</h1>
     <div class="left">
       <img :src="item.thumb" alt="Product Image" />
     </div>
@@ -8,9 +8,10 @@
       <div class="info">
         <span>Price: ${{ item.price }}</span>
         <div class="btns">
-          <button @click="onButClick(-1)" class="btn btn-light">-</button>
+
+          <button @click="btnClick(-1)" class="btn btn-light">-</button>
           <span class="count">{{ item.count }}</span>
-          <button @click="onButClick(1)" class="btn btn-light">+</button>
+          <button @click="btnClick(1)" class="btn btn-light">+</button>
         </div>
       </div>
     </div>
@@ -41,7 +42,7 @@ export default {
       this.$emit('remove', this.item.id)
     },
     add () {
-      this.$emit('add', this.item.id)
+      this.$emit('add', this.item.count + 1, this.item.id)
     },
     sub () {
       this.$emit('sub', this.item.id)
@@ -56,6 +57,19 @@ export default {
         count: newCount
       })
       console.log('onButClick', this.item.count, step, newCount)
+      this.$emit('sub', this.item.count - 1, this.item.id)
+    },
+    btnClick (step) {
+      const newCount = this.item.count + step
+      if (newCount < 1) {
+        return
+      }
+      const id = this.item.id
+      console.log(id, newCount)
+      this.$store.dispatch('cart/updateCountAsync', {
+        id,
+        newCount
+      })
     }
   }
 }

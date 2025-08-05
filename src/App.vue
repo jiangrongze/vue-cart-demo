@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="app-container">
     <cart-header></cart-header>
-    <cart-item v-for="item in list" :key="item.id" :item="item"></cart-item>
+    <CartItem v-for="item in list" :key="item.id" :item="item"></CartItem>
     <!-- <cart-items  :item="list"></cart-items> -->
     <cart-summary></cart-summary>
-    <cart-footer></cart-footer>
+    <CartFooter></CartFooter>
     <!-- <hello-world msg="Welcome to Your Vue.js App"/> -->
     <h1>Vue.js Shopping Cart{{ list[1].name }}</h1>
 
@@ -26,6 +26,16 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'App',
+  methods: {
+    add (newCount) {
+      this.list.count = newCount
+    },
+
+    sub (newCount) {
+      this.list.count = newCount
+    }
+
+  },
   components: {
     CartHeader,
     CartItem,
