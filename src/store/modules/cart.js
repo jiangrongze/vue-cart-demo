@@ -11,6 +11,7 @@ export default {
     updateList (state, newList) {
       state.list = newList
     }
+
   },
   actions: {
     async getList (context) {
@@ -31,6 +32,13 @@ export default {
       } else {
         console.error('Failed to fetch cart items:', res.statusText)
       }
+    },
+    async updateCountAsync (context, obj) {
+      
+      // console.log(obj, '*************')
+
+      const res = await axios.patch('http://localhost:3000/cart/${obj.id}',[count:obj.newCount])
+      console.log(res)
     }
   },
   // Note: getters are not defined here, as they are not used in the provided context.

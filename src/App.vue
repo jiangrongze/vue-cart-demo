@@ -28,6 +28,16 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'App',
+  methods: {
+    add (newCount) {
+      this.list.count = newCount
+    },
+
+    sub (newCount) {
+      this.list.count = newCount
+    }
+
+  },
   components: {
     CartHeader,
     CartItem,

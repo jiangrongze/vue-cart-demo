@@ -8,9 +8,9 @@
       <div class="info">
         <span>Price: ${{ item.price }}</span>
         <div class="btns">
-          <button @click="sub" class="btn btn-light">-</button>
+          <button @click="btnClick(-1)" class="btn btn-light">-</button>
           <span class="count">{{ item.count }}</span>
-          <button @click="add" class="btn btn-light">+</button>
+          <button @click="btnClick(1)" class="btn btn-light">+</button>
         </div>
       </div>
     </div>
@@ -31,10 +31,19 @@ export default {
       this.$emit('remove', this.item.id)
     },
     add () {
-      this.$emit('add', this.item.id)
+      this.$emit('add', this.item.count + 1, this.item.id)
     },
     sub () {
-      this.$emit('sub', this.item.id)
+      this.$emit('sub', this.item.count - 1, this.item.id)
+    },
+    btnClick (step) {
+      const newCount = this.item.count + step
+      const id = this.item.id
+      console.log(id, newCount)
+      this.$store.dispatch('cart/updateCountAsync', {
+        id,
+        newCount
+      })
     }
   }
 }
